@@ -1,0 +1,57 @@
+export const skills = [
+  {
+    id: "01",
+    name: "Programming",
+    category: "Core Foundation",
+    tools: [
+      { name: "Python", level: "Advanced" },
+      { name: "JavaScript", level: "Intermediate" },
+      { name: "PHP", level: "Advanced" },
+      { name: "HTML", level: "Expert" },
+      { name: "CSS", level: "Advanced" },
+    ],
+    pos: "top-left",
+  },
+  {
+    id: "02",
+    name: "Web Tech",
+    category: "Full-Stack Arsenal",
+    tools: [
+      { name: "Laravel", level: "Advanced" },
+      { name: "React", level: "Beginner" },
+      { name: "TailwindCSS", level: "Intermediate" },
+      { name: "Bootstrap", level: "Advanced" },
+      { name: "AlphineJS", level: "Beginner" },
+      { name: "RestAPI", level: "Intermediate" },
+    ],
+    pos: "top-right",
+  },
+  {
+    id: "03",
+    name: "Machine Learning",
+    category: "AI Engineering",
+    tools: [
+      { name: "TensorFlow", level: "Advanced" },
+      { name: "Scikit-learn", level: "Advanced" },
+      { name: "Keras", level: "Advanced" },
+      { name: "PyTorch", level: "Intermediate" },
+      { name: "Pandas", level: "Advanced" },
+      { name: "Matplotlib", level: "Advanced" },
+    ],
+    pos: "bottom-left",
+  },
+  {
+    id: "04",
+    name: "Database & Tools",
+    category: "Insight Engineering",
+    tools: [
+      { name: "MySQL", level: "Advanced" },
+      { name: "SQL", level: "Advanced" },
+      { name: "PostgreSQL", level: "Advanced" },
+      { name: "Git & Github", level: "Advanced" },
+      { name: "Power BI", level: "Beginner" },
+      { name: "Excel", level: "Advanced" },
+    ],
+    pos: "bottom-right",
+  },
+];
