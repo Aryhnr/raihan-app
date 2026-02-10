@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Link, Navigate, useNavigate } from "react-router-dom";
 import { projects } from "../data/projects";
 import { ArrowLeft, ArrowUpRight, Github } from "lucide-react";
 
 const ProjectDetail = () => {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const containerRef = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -23,6 +24,10 @@ const ProjectDetail = () => {
   const project = projects.find((p) => p.slug === slug);
   const currentIndex = projects.findIndex((p) => p.slug === slug);
   const nextProject = projects[currentIndex + 1] || projects[0];
+
+  const handleNavClick = (id) => {
+    navigate("/", { state: { scrollToId: id } });
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -63,6 +68,10 @@ const ProjectDetail = () => {
         <nav className="flex justify-between items-center mb-12 sm:mb-20">
           <Link
             to="/"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick("projects");
+            }}
             className="group relative flex items-center gap-4 py-2 overflow-hidden"
           >
             {/* Icon Container - Lebih clean tanpa border box */}
