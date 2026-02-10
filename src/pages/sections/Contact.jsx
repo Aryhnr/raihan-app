@@ -90,8 +90,8 @@ const Contact = () => {
               </h2>
               {/* UBAH: Text muted jadi neutral-500 */}
               <p className="text-neutral-500 text-sm md:text-base leading-relaxed max-w-md font-light">
-                Siap menerjemahkan ide kompleks menjadi realitas digital.
-                Hubungi saya untuk kolaborasi freelance atau teknis.
+                Ready to turn complex ideas into digital realities. Feel free to
+                reach out for freelance or technical collaborations.
               </p>
             </div>
 

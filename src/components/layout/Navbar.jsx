@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import IconAR from "../../assets/FIXlogoAR-nobg.png"
 
 const Navbar = ({ onNavClick }) => {
   // Tambahkan prop onNavClick
@@ -47,14 +48,22 @@ const Navbar = ({ onNavClick }) => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex flex-col"
+            className="flex items-center gap-3 group cursor-pointer" // Menambahkan gap dan group
           >
-            <span className="font-black text-xl tracking-tighter leading-none group-hover:italic transition-all duration-300 uppercase">
-              RAIHAN
-            </span>
-            <span className="font-mono text-[8px] tracking-[0.3em] uppercase text-gray-500 group-hover:text-black transition-colors">
-              Portfolio ©2026
-            </span>
+            {/* Samping Nama: Icon Geometris / Avatar */}
+            <div className="relative w-10 h-10 flex items-center justify-center overflow-hidden transition-colors duration-500">
+              {/* Opsi 1: Gambar/Avatar */}
+              <img src={IconAR} className="w-full h-full object-cover filter grayscale" alt="Raihan" />
+            </div>
+
+            <div className="flex flex-col">
+              <span className="font-black text-xl tracking-tighter leading-none group-hover:italic transition-all duration-300 uppercase">
+                RAIHAN
+              </span>
+              <span className="font-mono text-[8px] tracking-[0.3em] uppercase text-gray-500 group-hover:text-black transition-colors">
+                Portfolio ©2026
+              </span>
+            </div>
           </motion.div>
         </button>
 

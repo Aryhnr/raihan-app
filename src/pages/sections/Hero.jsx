@@ -109,8 +109,12 @@ const Hero = () => {
             <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
             <span className="font-bold">Focus Areas:</span>
           </div>
-          <p className="text-gray-500">Neural Networks / Scalable Systems</p>
-          <p className="text-gray-500">Cloud Architecture / AI Integration</p>
+          <p className="text-gray-500">
+            Full-Stack Web Developer · Machine Learning
+          </p>
+          <p className="text-gray-500">
+            Scalable Systems · AI-Powered Applications
+          </p>
         </motion.div>
 
         {/* Bio Section (Berada di tengah grid) */}
@@ -121,22 +125,25 @@ const Hero = () => {
           className="md:col-span-4 border-l border-black pl-6 hidden md:block"
         >
           <p className="text-sm md:text-base font-medium leading-relaxed tracking-tight text-gray-800">
-            Membangun jembatan antara{" "}
-            <span className="italic font-serif">robust code</span> dan{" "}
+            Designing scalable systems where{" "}
+            <span className="italic font-serif">robust code</span> meets{" "}
             <span className="italic font-serif">intelligent algorithms</span>.
           </p>
         </motion.div>
 
         {/* CTA Button (Sejajar paling kanan) */}
         <div className="md:col-span-4 flex justify-end">
-          <motion.button
+          <motion.a
+            href="https://drive.google.com/file/d/1Qp--FYzeEKbp6-GlgE6jN0v4DJUPEozY/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group relative px-10 py-5 bg-black text-white rounded-full overflow-hidden transition-all duration-500 font-mono text-[10px] uppercase tracking-widest cursor-pointer"
+            className="group relative px-10 py-5 bg-black text-white rounded-full overflow-hidden transition-all duration-500 font-mono text-[10px] uppercase tracking-widest cursor-pointer inline-block"
           >
-            <span className="relative z-10 text-white">Get In Touch</span>
+            <span className="relative z-10">Download Resume</span>
             <div className="absolute inset-0 bg-zinc-800 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-          </motion.button>
+          </motion.a>
         </div>
       </div>
 

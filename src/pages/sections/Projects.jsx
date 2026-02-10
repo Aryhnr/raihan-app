@@ -63,8 +63,8 @@ const Projects = () => {
               transition={{ delay: 0.6 }}
               className="w-full max-w-md md:max-w-[280px] text-left md:text-right font-medium text-sm leading-relaxed text-neutral-600"
             >
-              Eksplorasi antara algoritma cerdas dan antarmuka yang presisi.
-              Menampilkan solusi Full Stack yang ditenagai oleh data.
+              A collection of self-initiated projects built around intelligent
+              systems and refined interfaces.
             </motion.p>
           </div>
         </div>

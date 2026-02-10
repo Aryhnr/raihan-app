@@ -131,7 +131,7 @@ const About = () => {
             <div className="grid grid-cols-2 md:grid-cols-3 border-b border-neutral-200 lg:flex-1">
               {[
                 { label: "Specialization", val: "Fullstack / ML" },
-                { label: "Exp", val: ">1 Years" },
+                { label: "Exp", val: "<1 Years" },
                 { label: "Location", val: "Madura, ID" },
               ].map((item, i) => (
                 <div

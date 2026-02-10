@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const ProjectCard = ({ project, index }) => {
   return (
@@ -20,11 +21,14 @@ const ProjectCard = ({ project, index }) => {
           className="w-full h-full object-cover"
         />
         {/* Overlay on Hover */}
-        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+        <Link
+          to={`/project/${project.slug}`}
+          className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-10"
+        >
           <span className="bg-white text-black px-6 py-3 rounded-full font-mono text-[10px] uppercase tracking-widest translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
             View Case Study
           </span>
-        </div>
+        </Link>
       </div>
 
       {/* Project Info */}
