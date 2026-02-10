@@ -109,10 +109,10 @@ const Hero = () => {
             <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
             <span className="font-bold">Focus Areas:</span>
           </div>
-          <p className="text-gray-500">
+          <p className="text-gray-700">
             Full-Stack Web Developer · Machine Learning
           </p>
-          <p className="text-gray-500">
+          <p className="text-gray-700">
             Scalable Systems · AI-Powered Applications
           </p>
         </motion.div>

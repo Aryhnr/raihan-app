@@ -73,7 +73,7 @@ const Contact = () => {
       <div className="w-full px-4 sm:px-6 md:px-12 lg:px-24 relative z-10">
         <div className="flex items-baseline gap-4 md:gap-6 mb-8 md:mb-12">
           <div className="flex-1 h-[1px] bg-neutral-200"></div>
-          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-neutral-400 whitespace-nowrap">
+          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-neutral-600 whitespace-nowrap">
             Contact Channel — (06)
           </span>
         </div>
@@ -84,12 +84,12 @@ const Contact = () => {
             <div className="space-y-6">
               <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tight leading-[0.9]">
                 Let's Start <br />
-                <span className="font-serif italic font-light text-gray-400">
+                <span className="font-serif italic font-light text-gray-600">
                   Something New.
                 </span>
               </h2>
               {/* UBAH: Text muted jadi neutral-500 */}
-              <p className="text-neutral-500 text-sm md:text-base leading-relaxed max-w-md font-light">
+              <p className="text-neutral-700 text-sm md:text-base leading-relaxed max-w-md font-light">
                 Ready to turn complex ideas into digital realities. Feel free to
                 reach out for freelance or technical collaborations.
               </p>
@@ -100,13 +100,13 @@ const Contact = () => {
               {/* Lokasi */}
               <div className="relative pl-8 border-l-2 border-black/50">
                 {/* UBAH: Label bg jadi brand-bg */}
-                <span className="absolute -top-3 left-8 font-mono text-[9px] text-neutral-400 uppercase tracking-widest bg-brand-bg pr-2">
+                <span className="absolute -top-3 left-8 font-mono text-[9px] text-neutral-600 uppercase tracking-widest bg-brand-bg pr-2">
                   Base_Operations
                 </span>
                 <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-neutral-900">
                   Pamekasan, Madura
                 </h3>
-                <p className="font-mono text-[11px] text-neutral-500 uppercase tracking-widest mt-1">
+                <p className="font-mono text-[11px] text-neutral-700 uppercase tracking-widest mt-1">
                   Jawa Timur, Indonesia (IDN)
                 </p>
               </div>
@@ -115,7 +115,7 @@ const Contact = () => {
               {/* UBAH: Border jadi neutral-200 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-neutral-200">
                 <div className="group cursor-pointer">
-                  <span className="font-mono text-[9px] text-neutral-400 uppercase tracking-[0.2em] mb-2 block group-hover:text-black transition-colors">
+                  <span className="font-mono text-[9px] text-neutral-600 uppercase tracking-[0.2em] mb-2 block group-hover:text-black transition-colors">
                     Electronic_Mail
                   </span>
 
@@ -128,7 +128,7 @@ const Contact = () => {
                 </div>
 
                 <div className="group cursor-pointer">
-                  <span className="font-mono text-[9px] text-neutral-400 uppercase tracking-[0.2em] mb-2 block group-hover:text-black transition-colors">
+                  <span className="font-mono text-[9px] text-neutral-600 uppercase tracking-[0.2em] mb-2 block group-hover:text-black transition-colors">
                     Secure_Line
                   </span>
 
@@ -168,7 +168,7 @@ const Contact = () => {
                         : "bg-green-500"
                 } ${!status.loading && "animate-pulse"}`}
               />
-              <span className="font-mono text-[8px] text-neutral-400 uppercase tracking-widest">
+              <span className="font-mono text-[8px] text-neutral-600 uppercase tracking-widest">
                 {status.loading
                   ? "Sending..."
                   : status.success
@@ -182,7 +182,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-8 mt-4">
               {/* Input: Name */}
               <div className="space-y-2">
-                <label className="font-mono text-[9px] text-neutral-400 uppercase tracking-[0.2em]">
+                <label className="font-mono text-[9px] text-neutral-600 uppercase tracking-[0.2em]">
                   01 // Full_Name
                 </label>
                 {/* UBAH: Input style light mode */}
@@ -193,13 +193,13 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder="ENTER YOUR NAME"
-                  className="w-full bg-neutral-50 border border-neutral-200 px-4 py-4 font-bold text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-black focus:bg-white transition-all uppercase tracking-wider"
+                  className="w-full bg-neutral-50 border border-neutral-200 px-4 py-4 font-bold text-sm text-neutral-900 placeholder:text-neutral-600 focus:outline-none focus:border-black focus:bg-white transition-all uppercase tracking-wider"
                 />
               </div>
 
               {/* Input: Email */}
               <div className="space-y-2">
-                <label className="font-mono text-[9px] text-neutral-400 uppercase tracking-[0.2em]">
+                <label className="font-mono text-[9px] text-neutral-600 uppercase tracking-[0.2em]">
                   02 // Email_Address
                 </label>
                 <input
@@ -209,13 +209,13 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder="ENTER YOUR EMAIL"
-                  className="w-full bg-neutral-50 border border-neutral-200 px-4 py-4 font-bold text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-black focus:bg-white transition-all uppercase tracking-wider"
+                  className="w-full bg-neutral-50 border border-neutral-200 px-4 py-4 font-bold text-sm text-neutral-900 placeholder:text-neutral-600 focus:outline-none focus:border-black focus:bg-white transition-all uppercase tracking-wider"
                 />
               </div>
 
               {/* Input: Message */}
               <div className="space-y-2">
-                <label className="font-mono text-[9px] text-neutral-400 uppercase tracking-[0.2em]">
+                <label className="font-mono text-[9px] text-neutral-600 uppercase tracking-[0.2em]">
                   03 // Brief_Message
                 </label>
                 <textarea
@@ -225,7 +225,7 @@ const Contact = () => {
                   required
                   rows="4"
                   placeholder="PROJECT DETAILS..."
-                  className="w-full bg-neutral-50 border border-neutral-200 px-4 py-4 font-bold text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-black focus:bg-white transition-all uppercase tracking-wider resize-none"
+                  className="w-full bg-neutral-50 border border-neutral-200 px-4 py-4 font-bold text-sm text-neutral-900 placeholder:text-neutral-600 focus:outline-none focus:border-black focus:bg-white transition-all uppercase tracking-wider resize-none"
                 />
               </div>
 
@@ -257,7 +257,7 @@ const Contact = () => {
                 // UBAH: Tombol Hitam, Hover Kuning
                 className={`w-full py-5 font-black uppercase text-xs tracking-[0.4em] transition-colors duration-300 mt-4 ${
                   status.loading
-                    ? "bg-neutral-200 text-neutral-400 cursor-not-allowed"
+                    ? "bg-neutral-200 text-neutral-600 cursor-not-allowed"
                     : "bg-neutral-900 text-white hover:bg-neutral-400 hover:text-black"
                 }`}
               >
@@ -303,21 +303,21 @@ const Contact = () => {
               {/* UBAH: Preview box light */}
               <div className="space-y-4 mb-8">
                 <div className="bg-neutral-50 border border-neutral-200 p-4">
-                  <span className="font-mono text-[9px] text-neutral-400 uppercase tracking-wider block mb-2">
+                  <span className="font-mono text-[9px] text-neutral-600 uppercase tracking-wider block mb-2">
                     Name
                   </span>
                   <p className="text-neutral-900 font-bold">{formData.name}</p>
                 </div>
 
                 <div className="bg-neutral-50 border border-neutral-200 p-4">
-                  <span className="font-mono text-[9px] text-neutral-400 uppercase tracking-wider block mb-2">
+                  <span className="font-mono text-[9px] text-neutral-600 uppercase tracking-wider block mb-2">
                     Email
                   </span>
                   <p className="text-neutral-900 font-bold">{formData.email}</p>
                 </div>
 
                 <div className="bg-neutral-50 border border-neutral-200 p-4">
-                  <span className="font-mono text-[9px] text-neutral-400 uppercase tracking-wider block mb-2">
+                  <span className="font-mono text-[9px] text-neutral-600 uppercase tracking-wider block mb-2">
                     Message
                   </span>
                   <p className="text-neutral-600 text-sm leading-relaxed">
@@ -331,7 +331,7 @@ const Contact = () => {
                 <button
                   onClick={() => setShowModal(false)}
                   // UBAH: Tombol Cancel Light
-                  className="py-3 border border-neutral-200 text-neutral-500 hover:text-neutral-900 hover:border-neutral-900 font-mono text-xs uppercase tracking-widest transition-all"
+                  className="py-3 border border-neutral-200 text-neutral-700 hover:text-neutral-900 hover:border-neutral-900 font-mono text-xs uppercase tracking-widest transition-all"
                 >
                   Cancel
                 </button>
