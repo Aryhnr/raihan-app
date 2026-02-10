@@ -46,10 +46,10 @@ const Footer = () => {
                 <ul className="space-y-4">
                   {[
                     "Home",
-                    "About",
-                    "Skills",
                     "Projects",
                     "Experience",
+                    "Skills",
+                    "About",
                     "Contact",
                   ].map((item) => (
                     <li key={item} className="overflow-hidden">
@@ -57,7 +57,7 @@ const Footer = () => {
                         href={`#${item.toLowerCase()}`}
                         onClick={(e) => handleFooterNav(e, item.toLowerCase())}
                         // UBAH: Hover text yellow
-                        className="block text-1xl md:text-2xl font-black uppercase tracking-tight hover:text-white hover:translate-x-4 transition-all duration-300"
+                        className="block text-1xl md:text-2xl font-black uppercase tracking-tight hover:translate-x-4 transition-all duration-300"
                       >
                         {item}
                       </a>
@@ -128,9 +128,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
-          {/* KOLOM KANAN: THE GIANT TRIGGER */}
-          {/* KOLOM KANAN: THE GIANT TRIGGER (Tetap Sama) */}
           <div className="lg:col-span-4 flex flex-col h-full">
             <motion.button
               onClick={scrollToTop}

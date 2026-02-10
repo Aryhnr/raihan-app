@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 import IconAR from "../../assets/FIXlogoAR-nobg.png";
 
 const Navbar = ({ onNavClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,8 +29,13 @@ const Navbar = ({ onNavClick }) => {
   const handleLinkClick = (e, id) => {
     e.preventDefault();
     setIsOpen(false); // Tutup mobile menu jika terbuka
+
+    // Jika ada onNavClick (berarti di home page), gunakan transisi
     if (onNavClick) {
-      onNavClick(id); // Jalankan fungsi transisi tirai
+      onNavClick(id);
+    } else {
+      // Jika tidak (berarti di page lain), navigate ke home dengan state
+      navigate("/", { state: { scrollToId: id } });
     }
   };
 
@@ -98,14 +106,13 @@ const Navbar = ({ onNavClick }) => {
             <div className="h-8 w-[1px] bg-neutral-700 md:mx-2" />
           </motion.div>
 
-          <a
-            href="#contact"
+          <button
             onClick={(e) => handleLinkClick(e, "contact")}
             className="font-mono text-[10px] uppercase tracking-widest bg-black text-white px-5 py-2 rounded-full hover:bg-zinc-800 transition-all"
             aria-label="Contact - Let's talk"
           >
             Let's Talk
-          </a>
+          </button>
         </div>
 
         {/* MOBILE MENU BUTTON - FIXED Z-INDEX */}
@@ -143,15 +150,14 @@ const Navbar = ({ onNavClick }) => {
               </button>
             ))}
 
-            <a
-              href="#contact"
+            <button
               onClick={(e) => handleLinkClick(e, "contact")}
               className="font-mono text-sm uppercase tracking-widest bg-black text-white px-6 py-3 rounded-full hover:bg-zinc-800 transition-all text-center mt-4"
               role="menuitem"
               aria-label="Contact - Let's talk"
             >
               Let's Talk
-            </a>
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
