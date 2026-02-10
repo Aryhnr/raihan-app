@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { projects } from "../data/projects";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Github } from "lucide-react";
 
 const ProjectDetail = () => {
   const { slug } = useParams();
@@ -52,7 +52,7 @@ const ProjectDetail = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full px-4 sm:px-8 md:px-12 lg:px-24 min-h-screen bg-white text-neutral-900 font-sans selection:bg-black selection:text-white overflow-x-hidden"
+      className="w-full px-4 sm:px-8 md:px-12 lg:px-24 min-h-screen text-neutral-900 font-sans selection:bg-black selection:text-white overflow-x-hidden"
     >
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-black origin-left z-50"
@@ -230,26 +230,38 @@ const ProjectDetail = () => {
           </div>
         </section>
 
-        <section className="border-t-2 sm:border-t-4 border-black -mx-4 sm:mx-0">
+        <section className="-mx-4 sm:mx-0">
           <Link
             to={`/project/${nextProject.slug}`}
-            className="block group relative bg-white overflow-hidden"
+            aria-label={`Next case study: ${nextProject.title}`}
+            className="block group relative overflow-hidden transition-colors duration-500"
           >
-            <div className="px-6 md:px-12 py-20 sm:py-32 md:py-48 flex flex-col relative z-10">
-              <div className="flex justify-between items-end mb-6 sm:mb-8">
-                <span className="font-mono text-xs sm:text-sm font-bold text-black uppercase tracking-[0.2em]">
+            {/* Content Container */}
+            <div className="px-6 md:px-12 py-20 sm:py-32 md:py-40 flex flex-col relative z-10">
+              {/* Label Atas */}
+              <div className="flex items-center gap-4 mb-8">
+                <span className="font-mono text-xs font-bold text-black uppercase tracking-[0.3em] group-hover:text-white transition-colors duration-500">
                   Next Case Study
                 </span>
-                <ArrowUpRight className="w-8 h-8 sm:w-12 sm:h-12 text-black group-hover:rotate-45 transition-transform duration-500" />
+                <div className="h-[1px] w-12 bg-black group-hover:bg-white transition-colors duration-500" />
               </div>
-              <h2
-                className="text-[12vw] sm:text-[10vw] font-black uppercase tracking-tighter text-transparent leading-[0.85] group-hover:text-white transition-colors duration-500"
-                style={{ WebkitTextStroke: "1.5px black" }}
-              >
+
+              {/* Judul Masif & Solid */}
+              <h2 className="text-[12vw] sm:text-[10vw] font-black uppercase tracking-tighter leading-[0.8] text-black group-hover:text-white transition-colors duration-500">
                 {nextProject.title}
               </h2>
+
+              {/* Detail Bawah (Tampil saat hover) */}
+              <div className="mt-12 flex justify-between items-end opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                <p className="font-mono text-[10px] sm:text-xs text-neutral-400 uppercase tracking-widest">
+                  {nextProject.category} // {nextProject.year}
+                </p>
+                <ArrowUpRight className="w-10 h-10 text-white" />
+              </div>
             </div>
-            <div className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-in-out z-0" />
+
+            {/* Background Slide Up - Minimalis Solid */}
+            <div className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-600 ease-[cubic-bezier(0.85,0,0.15,1)] z-0" />
           </Link>
         </section>
       </main>
