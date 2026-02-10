@@ -38,7 +38,7 @@ const Projects = () => {
       <div className="px-6 md:px-12 lg:px-24">
         <div className="flex items-baseline gap-4 md:gap-6 mb-8 md:mb-12">
           <div className="flex-1 h-[1px] bg-neutral-200"></div>
-          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-neutral-400 whitespace-nowrap">
+          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-neutral-600 whitespace-nowrap">
             (02) — Core Projects
           </span>
         </div>

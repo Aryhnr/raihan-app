@@ -14,11 +14,11 @@ const Skills = () => {
         <div className="mb-10 pb-10">
           {/* 1. Label Atas */}
           <div className="flex items-baseline gap-4 md:gap-6 mb-8 md:mb-12">
-            <span className="hidden md:block font-mono text-[10px] text-neutral-400 tracking-widest">
+            <span className="hidden md:block font-mono text-[10px] text-neutral-600 tracking-widest">
               CAPACITY: 100%
             </span>
             <div className="flex-1 h-[1px] bg-neutral-200"></div>
-            <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-neutral-400 whitespace-nowrap">
+            <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-neutral-600 whitespace-nowrap">
               System Architecture — (04)
             </span>
           </div>
@@ -28,7 +28,7 @@ const Skills = () => {
             {/* BAGIAN JUDUL */}
             <h2 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9] text-neutral-900">
               Technical <br />
-              <span className="font-serif italic font-light text-neutral-400 ml-4 md:ml-24 border-b-2 border-neutral-900 pb-1 md:pb-2 inline-block">
+              <span className="font-serif italic font-light text-neutral-600 ml-4 md:ml-24 border-b-2 border-neutral-900 pb-1 md:pb-2 inline-block">
                 Proficiency.
               </span>
             </h2>
@@ -37,7 +37,7 @@ const Skills = () => {
               <div className="font-mono text-[10px] md:text-xs text-neutral-900 font-bold uppercase tracking-widest mb-1">
                 Fullstack Env.
               </div>
-              <div className="font-mono text-[10px] text-neutral-500 uppercase tracking-widest leading-relaxed">
+              <div className="font-mono text-[10px] text-neutral-700 uppercase tracking-widest leading-relaxed">
                 Laravel • React • DevOps
               </div>
             </div>

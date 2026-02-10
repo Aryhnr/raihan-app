@@ -11,7 +11,7 @@ const Experience = () => {
       {/* 1. CONTAINER UTAMA (Sesuai Padding Navbar) */}
       <div className="w-full px-6 md:px-12 lg:px-24">
         <div className="flex items-baseline gap-4 md:gap-6 mb-8 md:mb-12">
-          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-neutral-400 whitespace-nowrap">
+          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-neutral-600 whitespace-nowrap">
             (03) — Professional Path
           </span>
           <div className="flex-1 h-[1px] bg-neutral-200"></div>
@@ -30,7 +30,7 @@ const Experience = () => {
                 className="text-[14vw] md:text-[8vw] lg:text-[7.5vw] font-black tracking-tighter uppercase leading-[0.85] text-neutral-900"
               >
                 Selected <br />
-                <span className="font-serif italic font-light text-neutral-400 lowercase">
+                <span className="font-serif italic font-light text-neutral-600 lowercase">
                   Experience.
                 </span>
               </motion.h2>
@@ -75,7 +75,7 @@ const Experience = () => {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
                 {/* KOLOM KIRI: Meta Data (Span 3) */}
                 <div className="lg:col-span-3 flex flex-row lg:flex-col justify-between lg:justify-start gap-2">
-                  <span className="font-mono text-xs uppercase tracking-widest text-gray-400 group-hover:text-black transition-colors duration-300">
+                  <span className="font-mono text-xs uppercase tracking-widest text-gray-600 group-hover:text-black transition-colors duration-300">
                     {exp.period}
                   </span>
 
@@ -84,11 +84,11 @@ const Experience = () => {
                     <span
                       className={`h-1.5 w-1.5 rounded-full ${exp.status === "ACTIVE" ? "bg-green-500 animate-pulse" : "bg-gray-300"}`}
                     ></span>
-                    <span className="font-mono text-[10px] uppercase text-gray-400">
+                    <span className="font-mono text-[10px] uppercase text-gray-600">
                       {exp.status}
                     </span>
                   </div>
-                  <span className="font-mono text-xs uppercase tracking-widest text-gray-400 group-hover:text-black transition-colors duration-300">
+                  <span className="font-mono text-xs uppercase tracking-widest text-gray-600 group-hover:text-black transition-colors duration-300">
                     {exp.type}
                   </span>
                 </div>
@@ -99,7 +99,7 @@ const Experience = () => {
                     <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-1 group-hover:translate-x-2 transition-transform duration-500 ease-out">
                       {exp.company}
                     </h3>
-                    <p className="text-2xl font-serif italic text-gray-400 group-hover:text-gray-600 transition-colors duration-300 group-hover:translate-x-2 delay-75">
+                    <p className="text-2xl font-serif italic text-gray-600 group-hover:text-gray-600 transition-colors duration-300 group-hover:translate-x-2 delay-75">
                       {exp.role}
                     </p>
                   </div>
@@ -115,7 +115,7 @@ const Experience = () => {
                   <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-all duration-300">
                     <ArrowUpRight
                       size={20}
-                      className="text-gray-400 group-hover:text-white transition-colors duration-300"
+                      className="text-gray-600 group-hover:text-white transition-colors duration-300"
                     />
                   </div>
 

@@ -26,7 +26,7 @@ const About = () => {
       <div className="w-full px-4 sm:px-6 md:px-12 lg:px-24 relative z-10">
         {/* Pembatas Header */}
         <div className="flex items-baseline gap-4 md:gap-6 mb-8 md:mb-12">
-          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-neutral-400 whitespace-nowrap">
+          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-neutral-600 whitespace-nowrap">
             (04) — Beyond Code
           </span>
           <div className="flex-1 h-[1px] bg-neutral-200"></div>
@@ -36,7 +36,7 @@ const About = () => {
           <div className="lg:col-span-5 relative group bg-neutral-50 flex flex-col border-b lg:border-b-0 lg:border-r border-neutral-200">
             {/* Window Header */}
             <div className="p-3 md:p-4 border-b border-neutral-200 flex justify-between items-center bg-brand-bg z-10 shrink-0">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-neutral-500">
+              <span className="text-[10px] font-mono tracking-widest uppercase text-neutral-700">
                 Subject_01.jpg
               </span>
               <div className="flex gap-1">
@@ -64,17 +64,17 @@ const About = () => {
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                     </span>
-                    <p className="font-mono text-[8px] md:text-[10px] text-neutral-500 tracking-widest uppercase">
+                    <p className="font-mono text-[8px] md:text-[10px] text-neutral-700 tracking-widest uppercase">
                       System_Active
                     </p>
                   </div>
-                  <span className="font-mono text-[10px] text-neutral-400">
+                  <span className="font-mono text-[10px] text-neutral-600">
                     #001
                   </span>
                 </div>
                 <h4 className="text-lg md:text-2xl font-black uppercase leading-[0.9] text-neutral-900 tracking-tight">
                   Akh. Raihan
-                  <span className="text-neutral-400"> Gimnastiar .R</span>
+                  <span className="text-neutral-600"> Gimnastiar .R</span>
                 </h4>
               </div>
             </div>
@@ -91,7 +91,7 @@ const About = () => {
               >
                 Crafting <br />
                 <span className="text-black">Code &</span> <br />
-                <span className="font-serif italic font-light text-neutral-400 text-4xl sm:text-5xl md:text-6xl xl:text-7xl">
+                <span className="font-serif italic font-light text-neutral-600 text-4xl sm:text-5xl md:text-6xl xl:text-7xl">
                   Neurons.
                 </span>
               </motion.h2>
@@ -141,7 +141,7 @@ const About = () => {
                     ${i === 2 ? "col-span-2 md:col-span-1 border-t md:border-t-0 border-r-0" : ""}
                   `}
                 >
-                  <p className="text-[9px] md:text-[10px] font-mono uppercase text-neutral-500 group-hover:text-white/60 transition-colors tracking-widest mb-1">
+                  <p className="text-[9px] md:text-[10px] font-mono uppercase text-neutral-700 group-hover:text-white/60 transition-colors tracking-widest mb-1">
                     {item.label}
                   </p>
                   <p className="text-xs md:text-sm font-black uppercase text-neutral-900 group-hover:text-white transition-colors">
