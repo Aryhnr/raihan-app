@@ -65,6 +65,15 @@ const Navbar = ({ onNavClick }) => {
                 src={IconAR}
                 className="w-full h-full object-cover filter grayscale"
                 alt="Raihan logo"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+                style={{
+                  willChange: "auto",
+                  backfaceVisibility: "hidden",
+                  WebkitBackfaceVisibility: "hidden",
+                  transform: "translateZ(0)",
+                }}
               />
             </div>
 

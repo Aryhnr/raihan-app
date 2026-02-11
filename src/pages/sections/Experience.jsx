@@ -7,8 +7,25 @@ const Experience = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <section id="experience" className=" text-neutral-900 py-30">
-      {/* 1. CONTAINER UTAMA (Sesuai Padding Navbar) */}
+    <motion.section
+      id="experience"
+      className="text-neutral-900 py-30"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{
+        once: true,
+        margin: "-100px",
+        amount: 0.1,
+      }}
+      transition={{
+        duration: 0.3,
+        ease: "easeOut",
+      }}
+      style={{
+        contentVisibility: "auto",
+        containIntrinsicSize: "0 800px",
+      }}
+    >
       <div className="w-full px-6 md:px-12 lg:px-24">
         <div className="flex items-baseline gap-4 md:gap-6 mb-8 md:mb-12">
           <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-neutral-600 whitespace-nowrap">
@@ -139,7 +156,7 @@ const Experience = () => {
           <div className="w-full h-[1px] bg-gray-200"></div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
