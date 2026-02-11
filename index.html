@@ -9,6 +9,53 @@
     <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Preconnect (untuk performa) -->
+    <link rel="dns-prefetch" href="https://aryhnr-portofolio.vercel.app" />
+
+    <!-- Preload Critical Fonts (hanya 2 font paling penting) -->
+    <link 
+      rel="preload" 
+      href="/src/assets/fonts/inter/Inter_18pt-Regular.ttf" 
+      as="font" 
+      type="font/ttf" 
+      crossorigin="anonymous"
+    />
+    <link 
+      rel="preload" 
+      href="/src/assets/fonts/inter/Inter_18pt-Bold.ttf" 
+      as="font" 
+      type="font/ttf" 
+      crossorigin="anonymous"
+    />
+
+    <!-- Inline Critical CSS -->
+    <style>
+      /* Minimal CSS untuk mencegah FOUC (Flash of Unstyled Content) */
+      body {
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+        background-color: #f8f8f8;
+        color: #000000;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      /* Loading state skeleton (optional) */
+      .loading-skeleton {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s ease-in-out infinite;
+      }
+      @keyframes loading {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+    </style>
+
     <!-- SEO Title -->
     <title>Raihan — Junior Web Developer</title>
 

@@ -15,10 +15,25 @@ const About = () => {
   const xRight = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
-    <section
+    <motion.section
       ref={containerRef}
       id="about"
       className="relative min-h-screen w-full bg-brand-bg text-neutral-900 overflow-hidden py-12 md:py-20 lg:py-30"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{
+        once: true,
+        margin: "-100px",
+        amount: 0.1,
+      }}
+      transition={{
+        duration: 0.3,
+        ease: "easeOut",
+      }}
+      style={{
+        contentVisibility: "auto",
+        containIntrinsicSize: "0 1000px",
+      }}
     >
       {/* Background Gradient & Title (Hidden overflow) */}
       <div className="absolute top-0 left-0 w-full h-32 z-20 pointer-events-none" />
@@ -48,12 +63,36 @@ const About = () => {
 
             <div className="relative w-full overflow-hidden aspect-[4/5] lg:aspect-auto lg:flex-1">
               <motion.img
-                initial={{ scale: 1.2, filter: "grayscale(1) contrast(1.1)" }}
-                whileInView={{ scale: 1, filter: "grayscale(0) contrast(1)" }}
-                transition={{ duration: 1.5 }}
+                initial={{ scale: 1.2, opacity: 0.7 }}
+                whileInView={{
+                  scale: 1,
+                  opacity: 0.9,
+                  filter: "grayscale(0%) contrast(100%)",
+                }}
+                viewport={{
+                  once: true,
+                  amount: 0.3,
+                  margin: "-50px", // Trigger lebih awal
+                }}
+                transition={{
+                  duration: 1,
+                  ease: [0.22, 1, 0.36, 1], // Smooth custom easing
+                  filter: { duration: 1.5 }, // Filter lebih lambat
+                }}
                 src={FotoDiri}
                 alt="Raihan"
-                className="w-full h-full object-cover object-center lg:object-bottom opacity-90 group-hover:opacity-100 transition-opacity duration-700"
+                className="w-full h-full object-cover object-center lg:object-bottom group-hover:opacity-100 transition-opacity duration-500"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+                style={{
+                  filter: "grayscale(100%) contrast(110%)",
+                  willChange: "transform, filter, opacity",
+                  backfaceVisibility: "hidden",
+                  WebkitBackfaceVisibility: "hidden",
+                  transform: "translateZ(0)",
+                  imageRendering: "-webkit-optimize-contrast",
+                }}
               />
 
               {/* INFO CARD (Nama) - Absolute di atas Gambar */}
@@ -177,7 +216,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

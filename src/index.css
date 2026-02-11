@@ -2,15 +2,16 @@
 
 /* ======================
    FONT FACE (LOCAL TTF)
+   ✅ font-display: swap sudah benar
    ====================== */
 
-/* Inter */
+/* Inter - Critical Font (Loaded First) */
 @font-face {
   font-family: "Inter";
   src: url("/src/assets/fonts/inter/Inter_18pt-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: swap; /* ✅ Bagus! */
 }
 
 @font-face {
@@ -37,7 +38,7 @@
   font-display: swap;
 }
 
-/* Instrument Serif */
+/* Instrument Serif - Non-Critical (Loaded Later) */
 @font-face {
   font-family: "Instrument Serif";
   src: url("/src/assets/fonts/instrument-serif/InstrumentSerif-Regular.ttf") format("truetype");
@@ -53,7 +54,7 @@
   font-display: swap;
 }
 
-/* Space Mono */
+/* Space Mono - Non-Critical (Loaded Later) */
 @font-face {
   font-family: "Space Mono";
   src: url("/src/assets/fonts/space-mono/SpaceMono-Regular.ttf") format("truetype");

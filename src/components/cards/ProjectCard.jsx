@@ -15,10 +15,18 @@ const ProjectCard = ({ project, index }) => {
       <div className="relative aspect-[16/10] overflow-hidden bg-gray-100 mb-6">
         <motion.img
           whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
+          transition={{ duration: 0.4, ease: "easeOut" }} // Lebih cepat
           src={project.image}
           alt={project.title}
           className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          style={{
+            willChange: "transform",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+          }}
         />
         {/* Overlay on Hover */}
         <Link

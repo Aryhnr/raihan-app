@@ -170,6 +170,15 @@ const ProjectDetail = () => {
               src={project.image}
               alt={project.title}
               className="w-full h-full object-cover object-center scale-110"
+              loading="lazy"
+              decoding="async"
+              fetchpriority="low"
+              style={{
+                willChange: "transform",
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
+                transform: "translateZ(0) scale(1.1)",
+              }}
             />
           </motion.div>
         </section>

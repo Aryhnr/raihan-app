@@ -6,9 +6,24 @@ const Skills = () => {
   const [activeTab, setActiveTab] = useState(skills[0]);
 
   return (
-    <section
+    <motion.section
       id="skills"
       className="py-10 bg-brand-bg selection:bg-black selection:text-white"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{
+        once: true,
+        margin: "-100px",
+        amount: 0.1,
+      }}
+      transition={{
+        duration: 0.3,
+        ease: "easeOut",
+      }}
+      style={{
+        contentVisibility: "auto",
+        containIntrinsicSize: "0 600px",
+      }}
     >
       <div className="w-full px-6 md:px-12 lg:px-24">
         <div className="mb-10 pb-10">
@@ -167,7 +182,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -34,7 +34,25 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-30 bg-[#f8f8f8]">
+    <motion.section
+      id="projects"
+      className="py-30 bg-[#f8f8f8]"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{
+        once: true,
+        margin: "-100px",
+        amount: 0.1, // Trigger saat 10% visible
+      }}
+      transition={{
+        duration: 0.3,
+        ease: "easeOut",
+      }}
+      style={{
+        contentVisibility: "auto",
+        containIntrinsicSize: "0 800px",
+      }}
+    >
       <div className="px-6 md:px-12 lg:px-24">
         <div className="flex items-baseline gap-4 md:gap-6 mb-8 md:mb-12">
           <div className="flex-1 h-[1px] bg-neutral-200"></div>
@@ -124,7 +142,7 @@ const Projects = () => {
           </div>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

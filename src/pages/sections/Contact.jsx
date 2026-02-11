@@ -65,10 +65,24 @@ const Contact = () => {
   };
 
   return (
-    <section
+    <motion.section
       id="contact"
-      // UBAH: Background jadi brand-bg, text jadi dark
       className="bg-brand-bg text-neutral-900 py-24 md:py-30 relative overflow-hidden"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{
+        once: true,
+        margin: "-100px",
+        amount: 0.1,
+      }}
+      transition={{
+        duration: 0.3,
+        ease: "easeOut",
+      }}
+      style={{
+        contentVisibility: "auto",
+        containIntrinsicSize: "0 700px",
+      }}
     >
       <div className="w-full px-4 sm:px-6 md:px-12 lg:px-24 relative z-10">
         <div className="flex items-baseline gap-4 md:gap-6 mb-8 md:mb-12">
@@ -346,7 +360,7 @@ const Contact = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </motion.section>
   );
 };
 
