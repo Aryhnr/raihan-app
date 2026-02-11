@@ -20,16 +20,7 @@ export default defineConfig({
       },
     },
 
-    // Minifikasi optimal
-    minify: "terser",
-    terserOptions: {
-      compress: {
-        drop_console: true, // Remove console.log di production
-        drop_debugger: true,
-      },
-    },
-
-    // CSS code splitting
+    minify: "esbuild",
     cssCodeSplit: true,
 
     // Target browsers modern
