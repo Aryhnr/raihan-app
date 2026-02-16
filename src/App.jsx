@@ -6,11 +6,14 @@ import Home from "./pages/Home";
 import ProjectDetail from "./pages/ProjectDetail";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import FontLoader from "./components/FontLoader";
+import { ThemeProvider } from "./context/ThemeContext"; // Import ThemeProvider
 
 function App() {
   return (
     <Router>
-      <AppContent />
+      <ThemeProvider>
+        <AppContent />
+      </ThemeProvider>
     </Router>
   );
 }
@@ -50,7 +53,7 @@ function AppContent() {
   }, [targetId]);
 
   return (
-    <div className="min-h-screen relative flex flex-col bg-[#f8f8f8]">
+    <div className="min-h-screen relative flex flex-col bg-brand-bg text-text-primary">
       <FontLoader />
       <Navbar onNavClick={isHomePage ? handleNavClick : null} />
 

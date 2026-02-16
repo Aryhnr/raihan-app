@@ -164,7 +164,7 @@ export const projects = [
     slug: "hospital-cashier-system",
     links: {
       live: "",
-      github: "",
+      github: "https://github.com/Aryhnr/sistem-kasir-rumah-sakit",
     },
   },
 ];

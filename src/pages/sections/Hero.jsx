@@ -7,15 +7,15 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen w-full bg-[#f8f8f8] text-black overflow-hidden flex flex-col selection:bg-black selection:text-white"
+      className="relative min-h-screen w-full bg-brand-bg text-text-primary overflow-hidden flex flex-col selection:bg-accent selection:text-brand-bg"
     >
       {/* 1. SPACER */}
       <div className="h-24 md:h-32 w-full flex-shrink-0" />
 
       {/* 2. BACKGROUND & SIDE TEXT */}
-      <div className="absolute top-[20%] right-[-5%] w-[40vw] h-[40vw] bg-gray-200/50 rounded-full blur-[120px] pointer-events-none z-0" />
+      <div className="absolute top-[5%] right-[-5%] w-[40vw] h-[40vw] bg-gray-400/30 dark:bg-blue-950/15 rounded-full blur-[120px] pointer-events-none z-0" />
       <div className="absolute left-[-5vw] top-1/2 -translate-y-1/2 hidden xl:block pointer-events-none">
-        <span className="text-[15vw] font-black text-gray-400/20 uppercase rotate-90 block tracking-tighter">
+        <span className="text-[15vw] font-black text-gray-400/15  uppercase rotate-90 block tracking-tighter">
           RAIHAN
         </span>
       </div>
@@ -50,7 +50,7 @@ const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}
-                className="font-serif italic text-4xl md:text-6xl text-gray-400"
+                className="font-serif italic text-4xl md:text-6xl text-text-muted"
               >
                 &
               </motion.span>
@@ -61,12 +61,12 @@ const Hero = () => {
               {/* Sisi Kiri: Garis + Nama (Hanya Desktop) */}
               <div className="hidden lg:flex flex-col flex-grow">
                 {/* Garis Horizontal Animasi */}
-                <div className="h-[1px] w-full bg-black/10 relative overflow-hidden">
+                <div className="h-[1px] w-full bg-text-primary/10 relative overflow-hidden">
                   <motion.div
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: 1.5, delay: 0.8, ease: "circOut" }}
-                    className="absolute inset-0 bg-black origin-left"
+                    className="absolute inset-0 bg-text-primary origin-left"
                   />
                 </div>
                 {/* Teks Nama Animasi */}
@@ -109,10 +109,10 @@ const Hero = () => {
             <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
             <span className="font-bold">Focus Areas:</span>
           </div>
-          <p className="text-gray-700">
+          <p className="text-text-secondary">
             Full-Stack Web Developer · Machine Learning
           </p>
-          <p className="text-gray-700">
+          <p className="text-text-secondary">
             Scalable Systems · AI-Powered Applications
           </p>
         </motion.div>
@@ -122,9 +122,9 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2 }}
-          className="md:col-span-4 border-l border-black pl-6 hidden md:block"
+          className="md:col-span-4 border-l border-text-primary pl-6 hidden md:block"
         >
-          <p className="text-sm md:text-base font-medium leading-relaxed tracking-tight text-gray-800">
+          <p className="text-sm md:text-base font-medium leading-relaxed tracking-tight text-text-secondary">
             Designing scalable systems where{" "}
             <span className="italic font-serif">robust code</span> meets{" "}
             <span className="italic font-serif">intelligent algorithms</span>.
@@ -139,10 +139,10 @@ const Hero = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group relative px-10 py-5 bg-black text-white rounded-full overflow-hidden transition-all duration-500 font-mono text-[10px] uppercase tracking-widest cursor-pointer inline-block"
+            className="group relative px-10 py-5 bg-text-primary text-brand-bg rounded-full overflow-hidden transition-all duration-500 font-mono text-[10px] uppercase tracking-widest cursor-pointer inline-block"
           >
             <span className="relative z-10">Download Resume</span>
-            <div className="absolute inset-0 bg-zinc-800 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+            <div className="absolute inset-0 bg-neutral-800 dark:bg-neutral-200 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
           </motion.a>
         </div>
       </div>
