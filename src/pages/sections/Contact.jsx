@@ -67,7 +67,7 @@ const Contact = () => {
   return (
     <motion.section
       id="contact"
-      className="bg-brand-bg text-neutral-900 py-24 md:py-30 relative overflow-hidden"
+      className="bg-brand-bg text-text-primary py-24 md:py-30 relative overflow-hidden"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{
@@ -86,8 +86,8 @@ const Contact = () => {
     >
       <div className="w-full px-4 sm:px-6 md:px-12 lg:px-24 relative z-10">
         <div className="flex items-baseline gap-4 md:gap-6 mb-8 md:mb-12">
-          <div className="flex-1 h-[1px] bg-neutral-200"></div>
-          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-neutral-600 whitespace-nowrap">
+          <div className="flex-1 h-[1px] bg-border-primary"></div>
+          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-text-secondary whitespace-nowrap">
             Contact Channel — (06)
           </span>
         </div>
@@ -98,12 +98,11 @@ const Contact = () => {
             <div className="space-y-6">
               <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tight leading-[0.9]">
                 Let's Start <br />
-                <span className="font-serif italic font-light text-gray-600">
+                <span className="font-serif italic font-light text-text-secondary">
                   Something New.
                 </span>
               </h2>
-              {/* UBAH: Text muted jadi neutral-500 */}
-              <p className="text-neutral-700 text-sm md:text-base leading-relaxed max-w-md font-light">
+              <p className="text-text-secondary text-sm md:text-base leading-relaxed max-w-md font-light">
                 Ready to turn complex ideas into digital realities. Feel free to
                 reach out for freelance or technical collaborations.
               </p>
@@ -112,37 +111,35 @@ const Contact = () => {
             {/* Location & Contact Block */}
             <div className="space-y-10">
               {/* Lokasi */}
-              <div className="relative pl-8 border-l-2 border-black/50">
-                {/* UBAH: Label bg jadi brand-bg */}
-                <span className="absolute -top-3 left-8 font-mono text-[9px] text-neutral-600 uppercase tracking-widest bg-brand-bg pr-2">
+              <div className="relative pl-8 border-l-2 border-text-primary/50">
+                <span className="absolute -top-3 left-8 font-mono text-[9px] text-text-secondary uppercase tracking-widest bg-brand-bg pr-2">
                   Base_Operations
                 </span>
-                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-neutral-900">
+                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-text-primary">
                   Pamekasan, Madura
                 </h3>
-                <p className="font-mono text-[11px] text-neutral-700 uppercase tracking-widest mt-1">
+                <p className="font-mono text-[11px] text-text-secondary uppercase tracking-widest mt-1">
                   Jawa Timur, Indonesia (IDN)
                 </p>
               </div>
 
               {/* Detail Kontak Grid */}
-              {/* UBAH: Border jadi neutral-200 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-neutral-200">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-border-primary">
                 <div className="group cursor-pointer">
-                  <span className="font-mono text-[9px] text-neutral-600 uppercase tracking-[0.2em] mb-2 block group-hover:text-black transition-colors">
+                  <span className="font-mono text-[9px] text-text-secondary uppercase tracking-[0.2em] mb-2 block group-hover:text-text-primary transition-colors">
                     Electronic_Mail
                   </span>
 
                   <a
                     href="mailto:raihan.webml@gmail.com"
-                    className="text-lg font-bold tracking-tight border-b border-transparent group-hover:border-black transition-all text-neutral-900"
+                    className="text-lg font-bold tracking-tight border-b border-transparent group-hover:border-text-primary transition-all text-text-primary"
                   >
                     raihan.webml@gmail.com
                   </a>
                 </div>
 
                 <div className="group cursor-pointer">
-                  <span className="font-mono text-[9px] text-neutral-600 uppercase tracking-[0.2em] mb-2 block group-hover:text-black transition-colors">
+                  <span className="font-mono text-[9px] text-text-secondary uppercase tracking-[0.2em] mb-2 block group-hover:text-text-primary transition-colors">
                     Secure_Line
                   </span>
 
@@ -150,7 +147,7 @@ const Contact = () => {
                     href="https://wa.me/6289530516187"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-lg font-bold tracking-tight border-b border-transparent group-hover:border-black transition-all text-neutral-900"
+                    className="text-lg font-bold tracking-tight border-b border-transparent group-hover:border-text-primary transition-all text-text-primary"
                   >
                     +62 895-3051-6187
                   </a>
@@ -160,8 +157,7 @@ const Contact = () => {
           </div>
 
           {/* KOLOM KANAN: FORMULIR */}
-          {/* UBAH: bg-white, border-neutral-200 */}
-          <div className="bg-white border border-neutral-200 p-8 md:p-10 relative">
+          <div className="bg-brand-secondary border border-border-primary p-8 md:p-10 relative">
             {/* Status Indicator */}
             <div className="absolute top-6 right-6 flex items-center gap-2">
               <motion.span
@@ -178,11 +174,11 @@ const Contact = () => {
                     : status.error
                       ? "bg-red-500"
                       : status.loading
-                        ? "bg-black"
+                        ? "bg-text-primary"
                         : "bg-green-500"
                 } ${!status.loading && "animate-pulse"}`}
               />
-              <span className="font-mono text-[8px] text-neutral-600 uppercase tracking-widest">
+              <span className="font-mono text-[8px] text-text-secondary uppercase tracking-widest">
                 {status.loading
                   ? "Sending..."
                   : status.success
@@ -196,10 +192,9 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-8 mt-4">
               {/* Input: Name */}
               <div className="space-y-2">
-                <label className="font-mono text-[9px] text-neutral-600 uppercase tracking-[0.2em]">
+                <label className="font-mono text-[9px] text-text-secondary uppercase tracking-[0.2em]">
                   01 // Full_Name
                 </label>
-                {/* UBAH: Input style light mode */}
                 <input
                   type="text"
                   name="name"
@@ -207,13 +202,13 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder="ENTER YOUR NAME"
-                  className="w-full bg-neutral-50 border border-neutral-200 px-4 py-4 font-bold text-sm text-neutral-900 placeholder:text-neutral-600 focus:outline-none focus:border-black focus:bg-white transition-all uppercase tracking-wider"
+                  className="w-full bg-brand-tertiary border border-border-primary px-4 py-4 font-bold text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-text-primary focus:bg-brand-secondary transition-all uppercase tracking-wider"
                 />
               </div>
 
               {/* Input: Email */}
               <div className="space-y-2">
-                <label className="font-mono text-[9px] text-neutral-600 uppercase tracking-[0.2em]">
+                <label className="font-mono text-[9px] text-text-secondary uppercase tracking-[0.2em]">
                   02 // Email_Address
                 </label>
                 <input
@@ -223,13 +218,13 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder="ENTER YOUR EMAIL"
-                  className="w-full bg-neutral-50 border border-neutral-200 px-4 py-4 font-bold text-sm text-neutral-900 placeholder:text-neutral-600 focus:outline-none focus:border-black focus:bg-white transition-all uppercase tracking-wider"
+                  className="w-full bg-brand-tertiary border border-border-primary px-4 py-4 font-bold text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-text-primary focus:bg-brand-secondary transition-all uppercase tracking-wider"
                 />
               </div>
 
               {/* Input: Message */}
               <div className="space-y-2">
-                <label className="font-mono text-[9px] text-neutral-600 uppercase tracking-[0.2em]">
+                <label className="font-mono text-[9px] text-text-secondary uppercase tracking-[0.2em]">
                   03 // Brief_Message
                 </label>
                 <textarea
@@ -239,7 +234,7 @@ const Contact = () => {
                   required
                   rows="4"
                   placeholder="PROJECT DETAILS..."
-                  className="w-full bg-neutral-50 border border-neutral-200 px-4 py-4 font-bold text-sm text-neutral-900 placeholder:text-neutral-600 focus:outline-none focus:border-black focus:bg-white transition-all uppercase tracking-wider resize-none"
+                  className="w-full bg-brand-tertiary border border-border-primary px-4 py-4 font-bold text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-text-primary focus:bg-brand-secondary transition-all uppercase tracking-wider resize-none"
                 />
               </div>
 
@@ -268,11 +263,10 @@ const Contact = () => {
                 disabled={status.loading}
                 whileHover={{ scale: status.loading ? 1 : 1.01 }}
                 whileTap={{ scale: status.loading ? 1 : 0.99 }}
-                // UBAH: Tombol Hitam, Hover Kuning
                 className={`w-full py-5 font-black uppercase text-xs tracking-[0.4em] transition-colors duration-300 mt-4 ${
                   status.loading
-                    ? "bg-neutral-200 text-neutral-600 cursor-not-allowed"
-                    : "bg-neutral-900 text-white hover:bg-neutral-400 hover:text-black"
+                    ? "bg-border-primary text-text-muted cursor-not-allowed"
+                    : "bg-text-primary text-brand-bg hover:bg-neutral-400 dark:hover:bg-neutral-600 hover:text-text-primary"
                 }`}
               >
                 {status.loading ? "Sending..." : "Send_Inquiry"}
@@ -289,52 +283,52 @@ const Contact = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-neutral-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-neutral-900/40 dark:bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             onClick={() => setShowModal(false)}
           >
-            {/* UBAH: Modal bg putih */}
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white border border-neutral-200 max-w-md w-full p-8 relative shadow-2xl"
+              className="bg-brand-secondary border border-border-primary max-w-md w-full p-8 relative shadow-2xl"
             >
               {/* Header */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-6 h-[1px] bg-black" />
-                <span className="font-mono text-black text-[10px] tracking-[0.3em] uppercase">
+                <div className="w-6 h-[1px] bg-text-primary" />
+                <span className="font-mono text-text-primary text-[10px] tracking-[0.3em] uppercase">
                   Confirm_Send
                 </span>
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl font-black uppercase tracking-tight mb-6 text-neutral-900">
+              <h3 className="text-2xl font-black uppercase tracking-tight mb-6 text-text-primary">
                 Review Your Message
               </h3>
 
               {/* Preview Data */}
-              {/* UBAH: Preview box light */}
               <div className="space-y-4 mb-8">
-                <div className="bg-neutral-50 border border-neutral-200 p-4">
-                  <span className="font-mono text-[9px] text-neutral-600 uppercase tracking-wider block mb-2">
+                <div className="bg-brand-tertiary border border-border-primary p-4">
+                  <span className="font-mono text-[9px] text-text-secondary uppercase tracking-wider block mb-2">
                     Name
                   </span>
-                  <p className="text-neutral-900 font-bold">{formData.name}</p>
+                  <p className="text-text-primary font-bold">{formData.name}</p>
                 </div>
 
-                <div className="bg-neutral-50 border border-neutral-200 p-4">
-                  <span className="font-mono text-[9px] text-neutral-600 uppercase tracking-wider block mb-2">
+                <div className="bg-brand-tertiary border border-border-primary p-4">
+                  <span className="font-mono text-[9px] text-text-secondary uppercase tracking-wider block mb-2">
                     Email
                   </span>
-                  <p className="text-neutral-900 font-bold">{formData.email}</p>
+                  <p className="text-text-primary font-bold">
+                    {formData.email}
+                  </p>
                 </div>
 
-                <div className="bg-neutral-50 border border-neutral-200 p-4">
-                  <span className="font-mono text-[9px] text-neutral-600 uppercase tracking-wider block mb-2">
+                <div className="bg-brand-tertiary border border-border-primary p-4">
+                  <span className="font-mono text-[9px] text-text-secondary uppercase tracking-wider block mb-2">
                     Message
                   </span>
-                  <p className="text-neutral-600 text-sm leading-relaxed">
+                  <p className="text-text-secondary text-sm leading-relaxed">
                     {formData.message}
                   </p>
                 </div>
@@ -344,14 +338,13 @@ const Contact = () => {
               <div className="grid grid-cols-2 gap-4">
                 <button
                   onClick={() => setShowModal(false)}
-                  // UBAH: Tombol Cancel Light
-                  className="py-3 border border-neutral-200 text-neutral-700 hover:text-neutral-900 hover:border-neutral-900 font-mono text-xs uppercase tracking-widest transition-all"
+                  className="py-3 border border-border-primary text-text-secondary hover:text-text-primary hover:border-text-primary font-mono text-xs uppercase tracking-widest transition-all"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={sendEmail}
-                  className="py-3 bg-black text-white font-black uppercase text-xs tracking-widest hover:bg-neutral-500 transition-colors"
+                  className="py-3 bg-text-primary text-brand-bg font-black uppercase text-xs tracking-widest hover:bg-neutral-500 dark:hover:bg-neutral-700 transition-colors"
                 >
                   Send Now
                 </button>

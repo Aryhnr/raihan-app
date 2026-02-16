@@ -36,7 +36,7 @@ const Projects = () => {
   return (
     <motion.section
       id="projects"
-      className="py-30 bg-[#f8f8f8]"
+      className="py-30 bg-brand-bg"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{
@@ -55,8 +55,8 @@ const Projects = () => {
     >
       <div className="px-6 md:px-12 lg:px-24">
         <div className="flex items-baseline gap-4 md:gap-6 mb-8 md:mb-12">
-          <div className="flex-1 h-[1px] bg-neutral-200"></div>
-          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-neutral-600 whitespace-nowrap">
+          <div className="flex-1 h-[1px] bg-border-primary"></div>
+          <span className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-text-secondary whitespace-nowrap">
             (02) — Core Projects
           </span>
         </div>
@@ -69,7 +69,7 @@ const Projects = () => {
               whileInView={{ y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl pr-2 font-black uppercase leading-[0.85] tracking-tighter italic text-neutral-900"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl pr-2 font-black uppercase leading-[0.85] tracking-tighter italic text-text-primary"
             >
               Selected <br /> Works
             </motion.h2>
@@ -79,7 +79,7 @@ const Projects = () => {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="w-full max-w-md md:max-w-[280px] text-left md:text-right font-medium text-sm leading-relaxed text-neutral-600"
+              className="w-full max-w-md md:max-w-[280px] text-left md:text-right font-medium text-sm leading-relaxed text-text-secondary"
             >
               A collection of self-initiated projects built around intelligent
               systems and refined interfaces.
@@ -88,19 +88,20 @@ const Projects = () => {
         </div>
 
         {/* --- CATEGORY TABS --- */}
-        <div className="flex gap-8 mb-24 border-b border-gray-200 pb-4 overflow-x-auto no-scrollbar">
+        <div className="flex gap-8 mb-24 border-b border-border-primary pb-4 overflow-x-auto no-scrollbar">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => handleFilterChange(cat.id)}
-              className="relative font-mono text-[10px] uppercase tracking-[0.3em] pb-4 transition-colors duration-300"
-              style={{ color: filter === cat.id ? "#000" : "#9ca3af" }}
+              className={`relative font-mono text-[10px] uppercase tracking-[0.3em] pb-4 transition-colors duration-300 ${
+                filter === cat.id ? "text-text-primary" : "text-text-muted"
+              }`}
             >
               {cat.label}
               {filter === cat.id && (
                 <motion.div
                   layoutId="activeTab"
-                  className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-black"
+                  className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-text-primary"
                 />
               )}
             </button>
@@ -135,7 +136,7 @@ const Projects = () => {
             <motion.button
               onClick={() => setShowAll(!showAll)}
               whileHover={{ scale: 1.05 }}
-              className="border-b border-black pb-2 font-mono text-[10px] uppercase tracking-[0.4em] hover:text-gray-400 transition-colors"
+              className="border-b border-text-primary pb-2 font-mono text-[10px] uppercase tracking-[0.4em] hover:text-text-muted transition-colors"
             >
               {showAll ? "Show Less" : "See All Archives"}
             </motion.button>
