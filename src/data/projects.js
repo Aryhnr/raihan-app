@@ -167,4 +167,54 @@ export const projects = [
       github: "https://github.com/Aryhnr/sistem-kasir-rumah-sakit",
     },
   },
+  {
+    id: "09",
+    title: "Vehicle Booking System",
+    category: "TRANSPORTATION SYSTEM",
+    filterCategory: "web",
+    image:
+      "https://res.cloudinary.com/ddtmmrvk3/image/upload/v1774265170/Vehicle_Booking_System_h3x2my.webp", // isi sendiri
+    description:
+      "Web-based vehicle booking and monitoring system developed for a technical test. The system supports vehicle reservation with multi-level approval, driver assignment, and booking management. Includes vehicle usage tracking, fuel consumption monitoring, service scheduling, and interactive dashboard with usage analytics, along with periodic report export to Excel.",
+    tech: ["Laravel", "Tailwind CSS", "MySQL", "Alpine.js"],
+    client: "Technical Test - Sekawan Media",
+    year: 2026,
+    challenge:
+      "Designing a multi-level approval workflow, preventing booking schedule conflicts, and integrating vehicle monitoring features such as fuel tracking, service logs, and reporting within a single system.",
+    featured: true,
+    slug: "vehicle-booking-system",
+    links: {
+      live: "",
+      github:
+        "https://github.com/Aryhnr/Verhicle-Booking-System-technical-test-",
+    },
+  },
+  {
+    id: "10",
+    title: "Berita Viral Terkini",
+    category: "NEWS PLATFORM",
+    filterCategory: "web",
+    image:
+      "https://res.cloudinary.com/ddtmmrvk3/image/upload/v1774266792/Seacrh_Engine_2_pqtczw.webp", // isi sendiri
+    description:
+      "News portal web application currently under development, built collaboratively as a freelance project. Provides features such as homepage, news listing, category-based filtering, detailed news pages with user comments, and search functionality. Developed using Laravel backend and React frontend with Inertia.js for a seamless and modern user experience.",
+    tech: [
+      "Laravel",
+      "Inertia.js",
+      "React",
+      "Tailwind CSS",
+      "Filament",
+      "MySQL",
+    ],
+    client: "Freelance Project (Team)",
+    year: 2026,
+    challenge:
+      "Collaborating in a team environment while developing a scalable news platform, ensuring smooth integration between backend and frontend, and implementing efficient search and commenting features.",
+    featured: false,
+    slug: "berita-viral-terkini",
+    links: {
+      live: "",
+      github: "",
+    },
+  },
 ];
