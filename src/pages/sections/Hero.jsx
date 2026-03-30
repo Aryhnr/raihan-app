@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Linkedin } from "lucide-react";
 
 const Hero = () => {
   const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.95] };
@@ -174,15 +175,19 @@ const Hero = () => {
 
         <div className="md:col-span-4 flex justify-end">
           <motion.a
-            href="https://drive.google.com/file/d/1Qp--FYzeEKbp6-GlgE6jN0v4DJUPEozY/view?usp=sharing"
+            href="https://linkedin.com/in/username-kamu"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative px-10 py-5 bg-text-primary text-brand-bg rounded-full overflow-hidden transition-all duration-500 font-mono text-[10px] uppercase tracking-widest cursor-pointer inline-block"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="group relative px-8 py-5 bg-text-primary text-brand-bg rounded-full overflow-hidden transition-all duration-300 font-mono text-[10px] uppercase tracking-[0.2em] cursor-pointer inline-flex items-center gap-3"
           >
-            <span className="relative z-10">Download Resume</span>
-            <div className="absolute inset-0 bg-neutral-800 dark:bg-neutral-200 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+            <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover:text-text-primary">
+              <Linkedin size={14} strokeWidth={2} />
+              Connect LinkedIn
+            </span>
+
+            <div className="absolute inset-0 bg-brand-bg translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out border border-text-primary rounded-full" />
           </motion.a>
         </div>
       </div>
