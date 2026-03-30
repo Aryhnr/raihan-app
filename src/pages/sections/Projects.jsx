@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ProjectCard from "../../components/cards/ProjectCard";
 import { projects } from "../../data/projects";
+import { Github, ArrowUpRight } from "lucide-react";
 
 const Projects = () => {
   const [filter, setFilter] = useState("all");
@@ -74,16 +75,41 @@ const Projects = () => {
               Selected <br /> Works
             </motion.h2>
           </div>
+
+          {/* BAGIAN KANAN: DESKRIPSI & LINK GITHUB */}
           <div className="flex flex-col items-start md:items-end gap-4 md:gap-6 w-full md:w-auto">
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ delay: 0.6 }}
               className="w-full max-w-md md:max-w-[280px] text-left md:text-right font-medium text-sm leading-relaxed text-text-secondary"
             >
               A collection of self-initiated projects built around intelligent
               systems and refined interfaces.
             </motion.p>
+
+            <motion.a
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8 }}
+              href="https://github.com/aryhnr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-text-primary hover:text-text-secondary transition-all"
+            >
+              {/* LOGO GITHUB */}
+              <div className="p-2 rounded-full border border-border-primary group-hover:border-text-secondary transition-colors">
+                <Github size={16} strokeWidth={1.5} />
+              </div>
+
+              <span className="border-b border-text-primary/30 pb-1">
+                View GitHub Profile
+              </span>
+              
+              <ArrowUpRight size={14} className="opacity-50 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </motion.a>
           </div>
         </div>
 

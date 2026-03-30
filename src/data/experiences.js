@@ -21,7 +21,7 @@ export const experiences = [
   {
     id: "02",
     company: "Diskominfo Bangkalan",
-    role: "Full-Stack Developer",
+    role: "Fullstack Web Developer",
     period: "Jul 2024 — Okt 2024",
     status: "COMPLETED",
     type: "INTERNSHIP",
