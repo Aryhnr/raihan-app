@@ -31,13 +31,7 @@ const Projects = () => {
   };
 
   return (
-    <section
-      id="projects"
-      className="py-20 md:py-28 bg-brand-bg"
-      // ✅ FIX 1: Hapus motion + whileInView dari section wrapper
-      // contentVisibility: "auto" menyebabkan blank putih di mobile
-      // margin: "-100px" mencegah trigger di layar kecil
-    >
+    <section id="projects" className="py-20 md:py-30 bg-brand-bg">
       <div className="px-6 md:px-12 lg:px-24">
         <div className="flex items-baseline gap-4 md:gap-6 mb-8 md:mb-12">
           <div className="flex-1 h-[1px] bg-border-primary"></div>
@@ -49,10 +43,19 @@ const Projects = () => {
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6 md:gap-12 w-full">
           {/* BAGIAN KIRI: JUDUL BESAR */}
-          <div className="overflow-hidden w-full md:w-auto">
+          <div className="w-full md:w-auto">
+            {/*
+              ✅ FIX UTAMA:
+              1. Hapus overflow-hidden dari wrapper div
+              2. Ganti initial={{ y: "100%" }} → initial={{ opacity: 0, y: 30 }}
+              
+              Kenapa? overflow-hidden + y:"100%" = teks dimulai JAUH di bawah container.
+              Kalau whileInView tidak trigger di mobile (layar kecil, scroll cepat),
+              teks tidak pernah animate → tetap tersembunyi selamanya.
+            */}
             <motion.h2
-              initial={{ y: "100%" }}
-              whileInView={{ y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl pr-2 font-black uppercase leading-[0.85] tracking-tighter italic text-text-primary"
@@ -119,7 +122,7 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* ✅ FIX 2: Grid — gap-y mobile dikecilkan agar tidak overflow */}
+        {/* Grid */}
         <motion.div
           layout
           className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 md:gap-y-10"
@@ -133,7 +136,6 @@ const Projects = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                // ✅ FIX 3: mt-32 hanya di desktop
                 className={`${index % 2 !== 0 ? "md:mt-32" : ""}`}
               >
                 <ProjectCard project={project} index={index} />
