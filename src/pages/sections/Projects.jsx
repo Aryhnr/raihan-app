@@ -8,16 +8,13 @@ const Projects = () => {
   const [filter, setFilter] = useState("all");
   const [showAll, setShowAll] = useState(false);
 
-  // Filter logika: Jika "all" tampilkan semua, jika tidak sesuaikan kategori
   let filteredProjects =
     filter === "all"
       ? projects
       : projects.filter((p) => p.filterCategory === filter);
 
-  // Urutkan dari ID terbesar ke terkecil
   filteredProjects = filteredProjects.sort((a, b) => b.id - a.id);
 
-  // Batasi ke 4 card jika showAll false
   const displayedProjects = showAll
     ? filteredProjects
     : filteredProjects.slice(0, 4);
@@ -28,31 +25,18 @@ const Projects = () => {
     { id: "ml", label: "Machine Learning" },
   ];
 
-  // Reset showAll ketika filter berubah
   const handleFilterChange = (newFilter) => {
     setFilter(newFilter);
     setShowAll(false);
   };
 
   return (
-    <motion.section
+    <section
       id="projects"
-      className="py-30 bg-brand-bg"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{
-        once: true,
-        margin: "-100px",
-        amount: 0.1, // Trigger saat 10% visible
-      }}
-      transition={{
-        duration: 0.3,
-        ease: "easeOut",
-      }}
-      style={{
-        contentVisibility: "auto",
-        containIntrinsicSize: "0 800px",
-      }}
+      className="py-20 md:py-28 bg-brand-bg"
+      // ✅ FIX 1: Hapus motion + whileInView dari section wrapper
+      // contentVisibility: "auto" menyebabkan blank putih di mobile
+      // margin: "-100px" mencegah trigger di layar kecil
     >
       <div className="px-6 md:px-12 lg:px-24">
         <div className="flex items-baseline gap-4 md:gap-6 mb-8 md:mb-12">
@@ -61,6 +45,7 @@ const Projects = () => {
             (02) — Core Projects
           </span>
         </div>
+
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6 md:gap-12 w-full">
           {/* BAGIAN KIRI: JUDUL BESAR */}
@@ -68,7 +53,7 @@ const Projects = () => {
             <motion.h2
               initial={{ y: "100%" }}
               whileInView={{ y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl pr-2 font-black uppercase leading-[0.85] tracking-tighter italic text-text-primary"
             >
@@ -81,8 +66,8 @@ const Projects = () => {
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ delay: 0.3 }}
               className="w-full max-w-md md:max-w-[280px] text-left md:text-right font-medium text-sm leading-relaxed text-text-secondary"
             >
               A collection of self-initiated projects built around intelligent
@@ -92,34 +77,34 @@ const Projects = () => {
             <motion.a
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ delay: 0.4 }}
               href="https://github.com/aryhnr"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-3 font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-text-primary hover:text-text-secondary transition-all"
             >
-              {/* LOGO GITHUB */}
               <div className="p-2 rounded-full border border-border-primary group-hover:border-text-secondary transition-colors">
                 <Github size={16} strokeWidth={1.5} />
               </div>
-
               <span className="border-b border-text-primary/30 pb-1">
                 View GitHub Profile
               </span>
-              
-              <ArrowUpRight size={14} className="opacity-50 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight
+                size={14}
+                className="opacity-50 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+              />
             </motion.a>
           </div>
         </div>
 
         {/* --- CATEGORY TABS --- */}
-        <div className="flex gap-8 mb-24 border-b border-border-primary pb-4 overflow-x-auto no-scrollbar">
+        <div className="flex gap-8 mb-16 md:mb-24 border-b border-border-primary pb-4 overflow-x-auto no-scrollbar">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => handleFilterChange(cat.id)}
-              className={`relative font-mono text-[10px] uppercase tracking-[0.3em] pb-4 transition-colors duration-300 ${
+              className={`relative font-mono text-[10px] uppercase tracking-[0.3em] pb-4 transition-colors duration-300 whitespace-nowrap ${
                 filter === cat.id ? "text-text-primary" : "text-text-muted"
               }`}
             >
@@ -134,20 +119,21 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Asymmetric Grid */}
+        {/* ✅ FIX 2: Grid — gap-y mobile dikecilkan agar tidak overflow */}
         <motion.div
-          layout // Menghaluskan perpindahan saat filter berubah
-          className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24 md:gap-y-10"
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 md:gap-y-10"
         >
           <AnimatePresence mode="popLayout">
             {displayedProjects.map((project, index) => (
               <motion.div
                 layout
-                key={project.id || index} // Pastikan ada ID unik di data projects
-                initial={{ opacity: 0, scale: 0.9 }}
+                key={project.id || index}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.5 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4 }}
+                // ✅ FIX 3: mt-32 hanya di desktop
                 className={`${index % 2 !== 0 ? "md:mt-32" : ""}`}
               >
                 <ProjectCard project={project} index={index} />
@@ -156,9 +142,9 @@ const Projects = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* Bottom CTA - Tampil hanya jika ada project lebih dari 4 */}
+        {/* Bottom CTA */}
         {filteredProjects.length > 4 && (
-          <div className="mt-32 flex justify-center">
+          <div className="mt-20 md:mt-32 flex justify-center">
             <motion.button
               onClick={() => setShowAll(!showAll)}
               whileHover={{ scale: 1.05 }}
@@ -169,7 +155,7 @@ const Projects = () => {
           </div>
         )}
       </div>
-    </motion.section>
+    </section>
   );
 };
 
