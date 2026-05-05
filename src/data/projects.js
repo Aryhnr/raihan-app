@@ -121,7 +121,7 @@ export const projects = [
     featured: true,
     slug: "company-profile-mkr",
     links: {
-      live: "https://cvmultikaryarahayu.co.id/",
+      live: "",
       github: "",
     },
   },
@@ -212,6 +212,48 @@ export const projects = [
       "Collaborating in a team environment while developing a scalable news platform, ensuring smooth integration between backend and frontend, and implementing efficient search and commenting features.",
     featured: false,
     slug: "berita-viral-terkini",
+    links: {
+      live: "",
+      github: "",
+    },
+  },
+  {
+    id: "11",
+    title: "Web-Based POS & Inventory System with Barcode Integration",
+    category: "BUSINESS SYSTEM",
+    filterCategory: "web",
+    image:
+      "https://res.cloudinary.com/ddtmmrvk3/image/upload/v1777942817/pos_barcode_datb7s.webp",
+    description:
+      "Web-based Point of Sale (POS) and inventory management system featuring automatic product code generation with barcode support. Supports multi-method item input including USB barcode scanner, camera-based scanning (mobile/laptop), and manual input. Includes stock-in management, real-time stock updates, transaction recording, and analytics dashboard for monitoring sales and inventory performance.",
+    tech: ["Laravel", "Blade", "Tailwind CSS", "MySQL", "JavaScript"],
+    client: "Personal Project",
+    year: 2026,
+    challenge:
+      "Implementing multi-method scanning (hardware and camera) while ensuring accurate real-time stock synchronization and smooth cashier transaction flow.",
+    featured: true,
+    slug: "pos-barcode-system",
+    links: {
+      live: "https://stok-gudang.my.id/",
+      github: "",
+    },
+  },
+  {
+    id: "12",
+    title: "Cigarette Production & Payroll Management System",
+    category: "BUSINESS SYSTEM",
+    filterCategory: "web",
+    image:
+      "https://res.cloudinary.com/ddtmmrvk3/image/upload/v1777942817/rokok_roskvp.webp",
+    description:
+      "Integrated business management system for cigarette production operations, covering transactions, invoicing, inventory, and workforce payroll. Features include delivery note (surat jalan) generation, analytics dashboard, product and customer management, and a custom payroll system with task-based wage calculation (rolling & cutting), weekly payroll period (Friday–Thursday), and cash advance (kasbon) tracking with automatic deduction.",
+    tech: ["Laravel", "Blade", "Tailwind CSS", "MySQL", "JavaScript"],
+    client: "Personal Project",
+    year: 2026,
+    challenge:
+      "Designing complex business logic for payroll calculation, weekly period management, and integrating operational features like invoicing and delivery notes into a single system.",
+    featured: true,
+    slug: "cigarette-payroll-system",
     links: {
       live: "",
       github: "",

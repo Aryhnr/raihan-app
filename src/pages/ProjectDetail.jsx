@@ -126,7 +126,7 @@ const ProjectDetail = () => {
 
             <motion.h1
               variants={reveal}
-              className="text-[14vw] sm:text-[11vw] leading-[0.85] sm:leading-[0.8] font-black uppercase tracking-tighter text-text-primary mb-10 break-words"
+              className="text-[10vw] sm:text-[8vw] leading-[0.85] sm:leading-[0.8] font-black uppercase tracking-tighter text-text-primary mb-10 break-words"
             >
               {project.title}
             </motion.h1>
