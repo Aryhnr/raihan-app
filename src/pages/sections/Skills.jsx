@@ -50,7 +50,7 @@ const Skills = () => {
 
             <div className="text-left md:text-right w-full md:w-auto border-l-2 border-border-primary pl-4 md:border-l-0 md:pl-0 md:pb-3">
               <div className="font-mono text-[10px] md:text-xs text-text-primary font-bold uppercase tracking-widest mb-1">
-                Fullstack Env.
+                WebDev Env.
               </div>
               <div className="font-mono text-[10px] text-text-secondary uppercase tracking-widest leading-relaxed">
                 Laravel • React • DevOps

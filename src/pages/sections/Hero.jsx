@@ -33,45 +33,6 @@ const Hero = () => {
       <div className="relative z-10 px-6 md:px-12 lg:px-24 flex-grow flex flex-col justify-center">
         <div className="max-w-7xl mx-auto w-full">
           <div className="flex flex-col relative">
-            {/* --- LINGKARAN ABSOLUTE (DI ATAS KATA STACK) --- */}
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 1.5, duration: 1 }}
-              className="absolute top-[-40px] right-[-7%] md:right-[24%] lg:right-[23%] z-20"
-            >
-              <motion.div
-                animate={rotateAnimation}
-                className="relative flex items-center justify-center w-20 h-20 md:w-28 md:h-28"
-              >
-                {/* Background Hijau Muda */}
-                <div className="absolute inset-0 bg-[#CCFF00] rounded-full shadow-xl" />
-
-                {/* Text Melingkar Hitam */}
-                <svg
-                  viewBox="0 0 100 100"
-                  className="absolute inset-0 w-full h-full text-black fill-current p-1"
-                >
-                  <defs>
-                    <path
-                      id="circlePath"
-                      d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-                    />
-                  </defs>
-                  <text fontSize="9" fontWeight="900" letterSpacing="1">
-                    <textPath xlinkHref="#circlePath">
-                      FASTER. STRONGER. BETTER. • FASTER. STRONGER. BETTER. •
-                    </textPath>
-                  </text>
-                </svg>
-
-                {/* Star Icon Center */}
-                <div className="absolute text-black text-2xl md:text-3xl font-black">
-                  ✦
-                </div>
-              </motion.div>
-            </motion.div>
-
             {/* ROW 1 */}
             <div className="overflow-hidden">
               <motion.h1
@@ -80,25 +41,64 @@ const Hero = () => {
                 transition={transition}
                 className="text-[14vw] md:text-[10vw] font-black leading-[0.85] tracking-tighter uppercase italic"
               >
-                FULL STACK
+                WEB
               </motion.h1>
             </div>
 
             {/* ROW 2 */}
-            <div className="flex flex-col md:flex-row items-baseline gap-4 overflow-hidden">
-              <motion.h1
-                initial={{ y: "110%" }}
-                animate={{ y: 0 }}
-                transition={{ ...transition, delay: 0.1 }}
-                className="text-[14vw] md:text-[10vw] font-black leading-[0.85] tracking-tighter uppercase italic"
-              >
-                DEVELOPER
-              </motion.h1>
+            <div className="flex flex-row items-baseline gap-2 overflow-visible">
+              <div className="flex items-end gap-0 relative">
+                <div className="overflow-visible">
+                  <motion.h1
+                    initial={{ y: "110%" }}
+                    animate={{ y: 0 }}
+                    transition={{ ...transition, delay: 0.1 }}
+                    className="text-[14vw] md:text-[10vw] font-black leading-[0.85] tracking-tighter uppercase italic"
+                  >
+                    DEVELOPER
+                  </motion.h1>
+                </div>
+
+                {/* LINGKARAN — overlap di pojok kanan atas huruf R */}
+                <motion.div
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 1.5, duration: 1 }}
+                  className="flex-shrink-0 -translate-y-[70%] -translate-x-[20%]"
+                >
+                  <motion.div
+                    animate={rotateAnimation}
+                    className="relative flex items-center justify-center w-[8vw] h-[8vw] min-w-[56px] min-h-[56px] max-w-[100px] max-h-[100px]"
+                  >
+                    <div className="absolute inset-0 bg-[#CCFF00] rounded-full shadow-xl" />
+                    <svg
+                      viewBox="0 0 100 100"
+                      className="absolute inset-0 w-full h-full text-black fill-current p-1"
+                    >
+                      <defs>
+                        <path
+                          id="circlePath"
+                          d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                        />
+                      </defs>
+                      <text fontSize="9" fontWeight="900" letterSpacing="1">
+                        <textPath xlinkHref="#circlePath">
+                          WEB DEVELOPER • MACHINE LEARNING •
+                        </textPath>
+                      </text>
+                    </svg>
+                    <div className="absolute text-black text-xl md:text-2xl lg:text-3xl font-black">
+                      ✦
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </div>
+
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}
-                className="font-serif italic text-4xl md:text-6xl text-text-muted"
+                className="font-serif italic text-4xl md:text-6xl text-text-muted -ml-13 md:-ml-15"
               >
                 &
               </motion.span>
@@ -153,7 +153,7 @@ const Hero = () => {
             <span className="font-bold">Focus Areas:</span>
           </div>
           <p className="text-text-secondary">
-            Full-Stack Web Developer · Machine Learning
+            Web Developer · Machine Learning
           </p>
           <p className="text-text-secondary">
             Scalable Systems · AI-Powered Applications

@@ -21,7 +21,7 @@ const Projects = () => {
 
   const categories = [
     { id: "all", label: "All Works" },
-    { id: "web", label: "Full Stack" },
+    { id: "web", label: "WEB" },
     { id: "ml", label: "Machine Learning" },
   ];
 
@@ -44,15 +44,6 @@ const Projects = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6 md:gap-12 w-full">
           {/* BAGIAN KIRI: JUDUL BESAR */}
           <div className="w-full md:w-auto">
-            {/*
-              ✅ FIX UTAMA:
-              1. Hapus overflow-hidden dari wrapper div
-              2. Ganti initial={{ y: "100%" }} → initial={{ opacity: 0, y: 30 }}
-              
-              Kenapa? overflow-hidden + y:"100%" = teks dimulai JAUH di bawah container.
-              Kalau whileInView tidak trigger di mobile (layar kecil, scroll cepat),
-              teks tidak pernah animate → tetap tersembunyi selamanya.
-            */}
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

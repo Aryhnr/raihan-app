@@ -45,8 +45,8 @@ const Experience = () => {
                 transition={{ delay: 0.2 }}
                 className="text-text-muted text-lg font-light leading-relaxed max-w-sm"
               >
-                Membangun solusi digital yang presisi. Berfokus pada performa,
-                estetika, dan pengalaman pengguna yang intuitif.
+                Building precise digital solutions. Focused on performance,
+                aesthetics, and an intuitive user experience.
               </motion.p>
 
               {/* Garis Dekoratif Modern */}

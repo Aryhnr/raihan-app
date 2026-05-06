@@ -2,7 +2,7 @@ export const experiences = [
   {
     id: "01",
     company: "FREELANCE",
-    role: "Fullstack Web Developer",
+    role: "Web Developer",
     period: "2025 — PRESENT",
     status: "ACTIVE",
     type: "FREELANCE",
@@ -21,7 +21,7 @@ export const experiences = [
   {
     id: "02",
     company: "Diskominfo Bangkalan",
-    role: "Fullstack Web Developer",
+    role: "Web Developer",
     period: "Jul 2024 — Okt 2024",
     status: "COMPLETED",
     type: "INTERNSHIP",

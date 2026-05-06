@@ -162,7 +162,7 @@ const About = () => {
                 <p className="text-sm md:text-base text-text-secondary font-light leading-relaxed italic">
                   Specializing in{" "}
                   <span className="text-text-primary font-bold">
-                    Full-Stack Web
+                    Web Developer
                   </span>{" "}
                   and independent{" "}
                   <span className="text-text-primary font-bold">
@@ -176,7 +176,7 @@ const About = () => {
             {/* Bottom Row: Specs & Skills */}
             <div className="grid grid-cols-2 md:grid-cols-3 border-b border-border-primary lg:flex-1">
               {[
-                { label: "Specialization", val: "Fullstack / ML" },
+                { label: "Specialization", val: "WebDev / ML" },
                 { label: "Exp", val: "<1 Years" },
                 { label: "Location", val: "Madura, ID" },
               ].map((item, i) => (
@@ -199,7 +199,7 @@ const About = () => {
 
             {/* CTA Row */}
             <a
-              href="https://drive.google.com/file/d/1d8rHUSqged65oco_tweF7_bHVQCkCUW6/view?usp=sharing"
+              href="https://drive.google.com/file/d/1iROa7dKKEUiYnEpkKfLRSsfqh8MXIHEF/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="p-6 md:p-8 bg-text-primary text-brand-bg flex justify-between items-center group cursor-pointer overflow-hidden relative block decoration-none"
