@@ -80,10 +80,7 @@ const Navbar = ({ onNavClick }) => {
 
             <div className="flex flex-col">
               <span className="font-black text-xl tracking-tighter leading-none group-hover:italic transition-all duration-300 uppercase">
-                RAIHAN
-              </span>
-              <span className="font-mono text-[8px] tracking-[0.3em] uppercase text-text-secondary group-hover:text-text-primary transition-colors">
-                Portfolio ©2026
+                RAIHAN.
               </span>
             </div>
           </motion.div>
