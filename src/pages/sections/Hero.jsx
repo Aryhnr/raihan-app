@@ -175,7 +175,7 @@ const Hero = () => {
 
         <div className="md:col-span-4 flex justify-end">
           <motion.a
-            href="https://linkedin.com/in/username-kamu"
+            href="https://www.linkedin.com/in/aryhnr/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}

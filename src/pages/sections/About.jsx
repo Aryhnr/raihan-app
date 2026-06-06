@@ -199,7 +199,7 @@ const About = () => {
 
             {/* CTA Row */}
             <a
-              href="https://drive.google.com/file/d/1iROa7dKKEUiYnEpkKfLRSsfqh8MXIHEF/view?usp=sharing"
+              href="https://drive.google.com/file/d/11j-9v62XS8ABf18wwnA5AveD5wTOBmy-/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="p-6 md:p-8 bg-text-primary text-brand-bg flex justify-between items-center group cursor-pointer overflow-hidden relative block decoration-none"
