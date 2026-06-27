@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
-import IconAR from "../../assets/FIXlogoAR-nobg.png";
+import IconAR from "../../assets/FIXlogoAR-nobg.webp";
 import ThemeToggle from "../common/ThemeToggle";
 
 const Navbar = ({ onNavClick }) => {
@@ -66,6 +66,8 @@ const Navbar = ({ onNavClick }) => {
                 src={IconAR}
                 className="w-full h-full object-cover filter grayscale"
                 alt="Raihan logo"
+                width={40}
+                height={40}
                 loading="eager"
                 decoding="async"
                 fetchpriority="high"

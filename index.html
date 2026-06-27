@@ -3,30 +3,17 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
-
-    <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Preconnect (untuk performa) -->
-    <link rel="dns-prefetch" href="https://aryhnr-portofolio.vercel.app" />
+    <!-- Preconnect -->
+    <link rel="dns-prefetch" href="https://www.aryhnr-webdev.my.id" />
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
 
-    <!-- Preload Critical Fonts (hanya 2 font paling penting) -->
-    <link 
-      rel="preload" 
-      href="/src/assets/fonts/inter/Inter_18pt-Regular.ttf" 
-      as="font" 
-      type="font/ttf" 
-      crossorigin="anonymous"
-    />
-    <link 
-      rel="preload" 
-      href="/src/assets/fonts/inter/Inter_18pt-Bold.ttf" 
-      as="font" 
-      type="font/ttf" 
-      crossorigin="anonymous"
-    />
+    <!-- Preload Fonts — woff2 -->
+    <link rel="preload" href="/src/assets/fonts/inter/Inter_18pt-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/src/assets/fonts/inter/Inter_18pt-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
 
     <!-- Inline Critical CSS -->
     <style>
@@ -56,31 +43,18 @@
 
     <!-- SEO PRIMARY -->
     <title>Raihan Portfolio — Junior Full-Stack Web Developer</title>
+    <meta name="description" content="Portfolio Raihan — Junior Full-Stack Web Developer specializing in modern web development, scalable systems, and data-driven solutions." />
+    <meta name="keywords" content="raihan portfolio, aryhnr, junior web developer, junior full stack developer, react developer, web developer portfolio" />
 
-    <meta
-      name="description"
-      content="Portfolio Raihan — Junior Full-Stack Web Developer specializing in modern web development, scalable systems, and data-driven solutions."
-    />
-
-    <!-- Keywords (dibaca Bing, diabaikan Google — tetap boleh ada) -->
-    <meta
-      name="keywords"
-      content="raihan portfolio, aryhnr, junior web developer, junior full stack developer, react developer, web developer portfolio"
-    />
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://aryhnr-portofolio.vercel.app/" />
+    <link rel="canonical" href="https://www.aryhnr-webdev.my.id/" />
 
     <!-- OPEN GRAPH -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Raihan Portfolio" />
     <meta property="og:title" content="Raihan Portfolio — Junior Full-Stack Web Developer" />
-    <meta
-      property="og:description"
-      content="Portfolio Raihan, a Junior Full-Stack Web Developer showcasing web projects, scalable systems, and data-driven solutions."
-    />
-    <meta property="og:url" content="https://aryhnr-portofolio.vercel.app/" />
-    <meta property="og:image" content="https://aryhnr-portofolio.vercel.app/og-image.png" />
+    <meta property="og:description" content="Portfolio Raihan, a Junior Full-Stack Web Developer showcasing web projects, scalable systems, and data-driven solutions." />
+    <meta property="og:url" content="https://www.aryhnr-webdev.my.id/" />
+    <meta property="og:image" content="https://www.aryhnr-webdev.my.id/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
@@ -91,11 +65,13 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Raihan",
-      "url": "https://aryhnr-portofolio.vercel.app/",
+      "url": "https://www.aryhnr-webdev.my.id/",
       "jobTitle": "Junior Full-Stack Web Developer",
       "description": "Junior Full-Stack Web Developer specializing in modern web development, scalable systems, and data-driven solutions.",
-      "knowsAbout": ["Web Development", "Full-Stack Development", "React", "Node.js", "Scalable Systems"],
-      "sameAs": []
+      "knowsAbout": ["Web Development", "Full-Stack Development", "React", "Laravel", "Scalable Systems"],
+      "sameAs": [
+        "https://github.com/Aryhnr"
+      ]
     }
     </script>
 
@@ -104,16 +80,13 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Raihan Portfolio",
-      "url": "https://aryhnr-portofolio.vercel.app/",
+      "url": "https://www.aryhnr-webdev.my.id/",
       "description": "Portfolio website of Raihan, a Junior Full-Stack Web Developer."
     }
     </script>
 
     <!-- Google Site Verification -->
-    <meta
-      name="google-site-verification"
-      content="4gO94fgw4cxltp2jvGTUPp1l_cQ9zCe6ZXz8nwgJPzI"
-    />
+    <meta name="google-site-verification" content="4gO94fgw4cxltp2jvGTUPp1l_cQ9zCe6ZXz8nwgJPzI" />
   </head>
 
   <body>

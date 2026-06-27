@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { getOptimizedImage } from "../../utils/cloudinary"; // ← tambahan
 
 const ProjectCard = ({ project, index }) => {
   return (
@@ -15,8 +16,8 @@ const ProjectCard = ({ project, index }) => {
       <div className="relative aspect-[16/10] overflow-hidden bg-gray-100 mb-6">
         <motion.img
           whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.4, ease: "easeOut" }} // Lebih cepat
-          src={project.image}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          src={getOptimizedImage(project.image, 700)} // ← dioptimasi
           alt={project.title}
           className="w-full h-full object-cover"
           loading="lazy"
@@ -31,7 +32,7 @@ const ProjectCard = ({ project, index }) => {
         {/* Overlay on Hover */}
         <Link
           to={`/project/${project.slug}`}
-          aria-label="View Hospital Cashier System case study"
+          aria-label={`View ${project.title} case study`} // ← fix aria-label hardcoded
           className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-10"
         >
           <span className="bg-white text-black px-6 py-3 rounded-full font-mono text-[10px] uppercase tracking-widest translate-y-4 group-hover:translate-y-0 transition-transform duration-500">

@@ -4,6 +4,11 @@ import { useParams, Link, Navigate, useNavigate } from "react-router-dom";
 import { projects } from "../data/projects";
 import { ArrowLeft, ArrowUpRight, Github } from "lucide-react";
 
+const BASE_URL = "https://www.aryhnr-webdev.my.id";
+const DEFAULT_TITLE = "Raihan Portfolio — Junior Full-Stack Web Developer";
+const DEFAULT_DESC =
+  "Portfolio Raihan — Junior Full-Stack Web Developer specializing in modern web development, scalable systems, and data-driven solutions.";
+
 const ProjectDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -32,6 +37,84 @@ const ProjectDetail = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  // ── SEO Meta Tags ──────────────────────────────────────────────
+  useEffect(() => {
+    if (!project) return;
+
+    const pageTitle = `${project.title} — Raihan Portfolio`;
+    const pageDesc = project.description;
+    const pageUrl = `${BASE_URL}/project/${project.slug}`;
+
+    // Title
+    document.title = pageTitle;
+
+    // Meta description
+    const metaDesc = document.querySelector("meta[name='description']");
+    if (metaDesc) metaDesc.setAttribute("content", pageDesc);
+
+    // Canonical
+    const canonical = document.querySelector("link[rel='canonical']");
+    if (canonical) canonical.setAttribute("href", pageUrl);
+
+    // Open Graph
+    const ogTitle = document.querySelector("meta[property='og:title']");
+    const ogDesc = document.querySelector("meta[property='og:description']");
+    const ogUrl = document.querySelector("meta[property='og:url']");
+    const ogImage = document.querySelector("meta[property='og:image']");
+
+    if (ogTitle) ogTitle.setAttribute("content", pageTitle);
+    if (ogDesc) ogDesc.setAttribute("content", pageDesc);
+    if (ogUrl) ogUrl.setAttribute("content", pageUrl);
+    if (ogImage) ogImage.setAttribute("content", project.image);
+
+    // ── Schema Markup (JSON-LD) ─────────────────────────────────
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      name: project.title,
+      description: project.description,
+      url: pageUrl,
+      image: project.image,
+      author: {
+        "@type": "Person",
+        name: "Raihan",
+        url: BASE_URL,
+      },
+      dateCreated: `${project.year}`,
+      keywords: project.tech.join(", "),
+      creator: {
+        "@type": "Person",
+        name: "Raihan",
+      },
+    };
+
+    let schemaScript = document.getElementById("project-schema");
+    if (!schemaScript) {
+      schemaScript = document.createElement("script");
+      schemaScript.id = "project-schema";
+      schemaScript.type = "application/ld+json";
+      document.head.appendChild(schemaScript);
+    }
+    schemaScript.textContent = JSON.stringify(schema);
+    // ────────────────────────────────────────────────────────────
+
+    // Cleanup — reset ke default saat keluar halaman
+    return () => {
+      document.title = DEFAULT_TITLE;
+      if (metaDesc) metaDesc.setAttribute("content", DEFAULT_DESC);
+      if (canonical) canonical.setAttribute("href", `${BASE_URL}/`);
+      if (ogTitle) ogTitle.setAttribute("content", DEFAULT_TITLE);
+      if (ogDesc) ogDesc.setAttribute("content", DEFAULT_DESC);
+      if (ogUrl) ogUrl.setAttribute("content", `${BASE_URL}/`);
+      if (ogImage) ogImage.setAttribute("content", `${BASE_URL}/og-image.png`);
+
+      // Hapus schema saat keluar halaman
+      const oldSchema = document.getElementById("project-schema");
+      if (oldSchema) oldSchema.remove();
+    };
+  }, [project]);
+  // ───────────────────────────────────────────────────────────────
 
   if (!project) return <Navigate to="/" replace />;
 
@@ -73,7 +156,6 @@ const ProjectDetail = () => {
             }}
             className="group relative flex items-center gap-4 py-2 overflow-hidden"
           >
-            {/* Icon Container */}
             <div className="relative w-5 h-5 flex items-center justify-center">
               <ArrowLeft
                 size={20}
@@ -85,17 +167,13 @@ const ProjectDetail = () => {
               />
             </div>
 
-            {/* Text Label dengan animasi Underline */}
             <div className="flex flex-col">
               <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.3em] text-text-muted group-hover:text-text-primary transition-colors duration-500">
                 Back to Index
               </span>
-
-              {/* Animated Underline */}
               <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-text-primary scale-x-0 group-hover:scale-x-100 origin-right group-hover:origin-left transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]" />
             </div>
 
-            {/* Ghost Label */}
             <span className="absolute -bottom-1 left-9 text-[40px] font-black text-neutral-100 dark:text-neutral-900 -z-10 opacity-0 group-hover:opacity-100 group-hover:-translate-y-2 transition-all duration-700 select-none pointer-events-none uppercase">
               Return
             </span>
@@ -252,9 +330,7 @@ const ProjectDetail = () => {
             aria-label={`Next case study: ${nextProject.title}`}
             className="block group relative overflow-hidden transition-colors duration-500"
           >
-            {/* Content Container */}
             <div className="px-6 md:px-12 py-20 sm:py-32 md:py-40 flex flex-col relative z-10">
-              {/* Label Atas */}
               <div className="flex items-center gap-4 mb-8">
                 <span className="font-mono text-xs font-bold text-text-primary uppercase tracking-[0.3em] group-hover:text-brand-bg transition-colors duration-500">
                   Next Case Study
@@ -262,12 +338,10 @@ const ProjectDetail = () => {
                 <div className="h-[1px] w-12 bg-text-primary group-hover:bg-brand-bg transition-colors duration-500" />
               </div>
 
-              {/* Judul Masif & Solid */}
               <h2 className="text-[12vw] sm:text-[10vw] font-black uppercase tracking-tighter leading-[0.8] text-text-primary group-hover:text-brand-bg transition-colors duration-500">
                 {nextProject.title}
               </h2>
 
-              {/* Detail Bawah (Tampil saat hover) */}
               <div className="mt-12 flex justify-between items-end opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
                 <p className="font-mono text-[10px] sm:text-xs text-neutral-400 dark:text-neutral-600 uppercase tracking-widest">
                   {nextProject.category} // {nextProject.year}
@@ -276,7 +350,6 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            {/* Background Slide Up */}
             <div className="absolute inset-0 bg-text-primary translate-y-full group-hover:translate-y-0 transition-transform duration-600 ease-[cubic-bezier(0.85,0,0.15,1)] z-0" />
           </Link>
         </section>
